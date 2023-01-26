@@ -1,0 +1,34 @@
+
+
+Radio Button / Check Boxes
+
+
+
+waiting...
+
+cy.wait(5000)
+
+
+
+cypress event ..
+
+alert is handled (closed) automatically closed by cypress...
+if we need to validate content within alert then we need to use events...
+
+
+For Alert Box
+cy.on('window:alert',(t)=>{
+
+expect(t).to.contains('I am in JS Alert')
+
+})
+
+for Confirm Box
+cy.on('window:confirm',(t)=>{
+
+//expect(t).to.contains('I am in JS Alert')
+
+})
+
+
+cy.on('window:confirm',()=>false); // this line will close confirm window using Cancel button.

@@ -1,0 +1,59 @@
+locators:
+
+css
+
+xpath : need plugin   https://docs.cypress.io/plugins
+    npm install -D @cypress/xpath
+
+Add reference in command.js =>  ///<reference types="@cypress/xpath" />    
+
+
+cy.get() -> css locators
+cy.xpath() -> xpath locators
+
+chain xpath:
+
+cy.xpath(//ul).xpath(.//li)  => will check li within ul
+
+cy.xpath(//ul).xpath(//li)  => will check li in whole document DOM. if we miss period (.)
+
+
+
+
+CSS Selector
+----------- 
+tag id
+tag class
+tag attribute
+tag class attribute
+
+tag -> optional 
+
+example
+
+#id
+.class
+[attribute='value']
+.class[attribute='value']
+
+OR with optional tag
+
+tag#id
+tag.class
+tag[attribute='value']
+tag.class[attribute='value']
+
+input.myclass
+input#myId
+
+
+support folder Command.js
+include below line:
+/// <reference types="Cypress" />
+
+to not require below statement in all specs
+const cypress = require("cypress")
+
+
+----------------
+

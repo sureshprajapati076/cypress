@@ -1,0 +1,22 @@
+npm install cypress --save -dev
+
+npx cypress open
+
+RUN all spec files:
+
+npx cypress run
+
+npx cypress run --headed   //default headless for headed use this command
+
+npx cypress run --headed --browser chrome // default is electron use --browser to specific browser
+
+
+RUN SPECIFIC spec file:
+npx cypress run --spec cpress/e2e/filename.cy.js
+
+
+describe('citibank',()=>{   //describe is as suite
+
+    it('test1',()=>{   //test files 
+
+      //  expect(true).to.equal(true)   //steps

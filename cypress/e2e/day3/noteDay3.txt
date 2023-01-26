@@ -1,0 +1,32 @@
+Assertions:
+
+    Implicit Assertions/Build In 
+        cypress supports by default.
+        1. should
+            - include
+            - eq
+            - contain
+            - exists
+            - have.length
+            - have.value
+            - have.text
+        2. and
+
+    Explicit Assertions
+        expect - BDD approach   https://docs.cypress.io/guides/references/assertions#BDD-Assertions
+        assert - TDD approach   https://docs.cypress.io/guides/references/assertions#TDD-Assertions
+
+Explicit Assertions are performed using javascript function
+
+
+                //Explicit assertions
+                let providedName='suresh';
+                cy.get("some_css_locators").then((x)=>{
+                        let name=x.text();   //get text from webelement
+                        expect(name).to.equal(providedName)  //explicit asserttion in BDD approach
+
+                        assert.equal(name,providedName)  // explicit assertion in TDD approach
+                        assert.notEqual(name,providedName)
+
+                }
+                )
