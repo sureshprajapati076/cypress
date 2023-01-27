@@ -37,6 +37,7 @@ describe('mouse actions', () => {
 
         cy.visit('')
         cy.get('elementToScroll').scrollIntoView({duration:2000})
+        cy.scrollTo(0,2500,{duration:5000}) // scrolls to 2500 pixels down
 
 
 
