@@ -12,7 +12,7 @@ npx cypress run --headed --browser chrome // default is electron use --browser t
 
 
 RUN SPECIFIC spec file:
-npx cypress run --spec cpress/e2e/filename.cy.js
+npx cypress run --spec cypress/e2e/filename.cy.js
 
 
 describe('citibank',()=>{   //describe is as suite

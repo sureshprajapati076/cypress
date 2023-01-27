@@ -1,0 +1,17 @@
+[
+    {
+        "searchText":"automation1",
+        "anotherSearch":"manual",
+        "thirdSearchtext":"aeroplane"
+    },
+    {
+        "searchText":"automation2",
+        "anotherSearch":"manual",
+        "thirdSearchtext":"aeroplane"
+    },
+    {
+        "searchText":"automation3",
+        "anotherSearch":"manual",
+        "thirdSearchtext":"aeroplane"
+    }
+]

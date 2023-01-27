@@ -34,3 +34,18 @@ Cypress.Commands.add('getIframe',(iframe)=>{
             .should('be.visible')
             .then(cy.wrap)
 })
+
+require('@4tw/cypress-drag-drop')
+
+
+//Custom Command for clicking on link using label for file customcommand.cy.js
+
+Cypress.Commands.add('clickLink',(label)=>{
+    cy.get('a').contains(label).click()
+})
+
+Cypress.Commands.add('loginNow',(user,pass)=>{
+    cy.get('#Email').type(user)
+    cy.get('#Password').type(pass)
+    cy.get('.new-wrapper > .buttons > .button-1').click()
+})

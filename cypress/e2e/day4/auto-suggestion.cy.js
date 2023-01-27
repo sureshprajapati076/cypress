@@ -6,7 +6,7 @@ describe('auto suggestin',()=>{
 it('auto suggestion',()=>{
 
     cy.visit('https://www.wikipedia.org')
-    cy.get('#searchInput').type('Seattle')
+    cy.get('#searchInput')
     cy.get('.suggestion-title').contains('Seattle Seahawks').click()
 
 })
