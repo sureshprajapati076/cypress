@@ -1,5 +1,6 @@
 describe('experian', () => {
     it('experian demo', () => {
+       
         cy.visit('https://www.expedia.com')
         cy.get('body').type('{esc}')
         let sample = "#d1-btn"
@@ -19,16 +20,22 @@ describe('experian', () => {
 
 function clickNextMonthByRecursion(monthYear) {
     //  cy.wait(5000)
-    cy.get("button[data-stid='date-picker-paging']").eq(1).click()
-    cy.get('.uitk-date-picker-month-name.uitk-type-medium').first().then((webele) => {
-        cy.log(webele.text())
-        if (webele.text() == monthYear) {
-            // cy.wait(10000)
-            // cy.log('found')
-            return
-        }
-        else {
-            clickNextMonthByRecursion(monthYear);
+    // cy.get("button[data-stid='date-picker-paging']").eq(1).click()
+
+
+    let monthYears = []
+    cy.get('.uitk-date-picker-month-name.uitk-type-medium').each(($mmyy,index,$mmYYYY)=>{
+        cy.wrap($mmyy).then((ele)=>{
+            monthYears.push(ele.text())
+        })
+    })
+
+    //Note normal js scripts runs before cypress commands so we need to include non-cypress logic inside cy.then so we can expect to run in sequential order
+    cy.wait(5000).then(()=>{
+        if(!monthYears.includes(monthYear)){
+            cy.get("button[data-stid='date-picker-paging']").eq(1).click()
+            clickNextMonthByRecursion(monthYear)
         }
     })
+    
 }
