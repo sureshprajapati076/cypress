@@ -5,8 +5,10 @@ describe('citi bank account opening feature',()=>{
 
         cy.visit('https://uat03.citi.com/')
         cy.get('#signOnMobileALink').click()
+
         cy.get('#username').type('card_none39')
         cy.get('#password').type('Test@123$')
+        
         cy.get('#signInBtn').click()
         cy.wait(5000)
         cy.get('button.cds-button.ng-tns-c358-4.cds-button-xs.cds-button-icon-round.cds-button-secondary').eq(1).click()
