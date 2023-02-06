@@ -1,4 +1,18 @@
+const { default: axios } = require("axios")
 
+/*
+//Using Axios for http request
+const getAllUserEmails = async ()=>{
+    const response= await axios.get("https://jsonplaceholder.typicode.com/users")
+    const userEmailArr = response.data.map(user=>{
+        return user.email
+    })
+    const myPromiseRes = await myPromise
+    postToAnotherFun(myPromiseRes)
+   postToAnyFunctin(userEmailArr)
+   
+}
+*/
 
 const getAllUserEmails = async ()=>{
     const response= await fetch("https://jsonplaceholder.typicode.com/users")
